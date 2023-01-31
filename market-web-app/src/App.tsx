@@ -5,6 +5,8 @@ import AccountPage from "./pages/AccountPage";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import SettingsPage from "./pages/SettingsPage";
+import { store } from "./store/store";
+import { Provider } from "react-redux";
 
 function App() {
   return (
