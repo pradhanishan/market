@@ -5,6 +5,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { FC, useState } from "react";
 import ListGroup from "react-bootstrap/listgroup";
 import HeaderNavItem from "./HeaderNavItem";
+import Button from "react-bootstrap/Button";
 
 export const HeaderOffcanvas: FC = () => {
   const [show, setShow] = useState(false);
@@ -20,11 +21,14 @@ export const HeaderOffcanvas: FC = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <ListGroup variant="flush">
-            <HeaderNavItem icon={<MdHome />} name="Home" />
-            <HeaderNavItem icon={<MdShoppingCart />} name="Cart" />
-            <HeaderNavItem icon={<FaUser />} name="Account" />
-            <HeaderNavItem icon={<FaMoon />} name="Dark Mode" />
-            <HeaderNavItem icon={<MdSettings />} name="Settings" />
+            <HeaderNavItem onClick={handleClose} icon={<MdHome />} name="Home" to="/" />
+            <HeaderNavItem onClick={handleClose} icon={<MdShoppingCart />} name="Cart" to="/cart" />
+            <HeaderNavItem onClick={handleClose} icon={<FaUser />} name="Account" to="/account" />
+            <HeaderNavItem onClick={handleClose} icon={<MdSettings />} name="Settings" to="/settings" />
+            <Button>
+              <FaMoon />
+              Dark Mode
+            </Button>
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>

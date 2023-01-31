@@ -1,18 +1,21 @@
 import { FC } from "react";
 import ListGroup from "react-bootstrap/listgroup";
-import { MdSettings } from "react-icons/md";
-
+import { NavLink } from "react-router-dom";
 interface IHeaderNavItemProps {
   icon: any;
   name: string;
+  to: string;
+  onClick: any;
 }
 
-const HeaderNavItem: FC<IHeaderNavItemProps> = ({ icon, name }: IHeaderNavItemProps) => {
+const HeaderNavItem: FC<IHeaderNavItemProps> = ({ icon, name, to, onClick }: IHeaderNavItemProps) => {
   return (
-    <ListGroup.Item>
-      {icon}
-      {name}
-    </ListGroup.Item>
+    <NavLink to={to} onClick={onClick}>
+      <ListGroup.Item>
+        {icon}
+        {name}
+      </ListGroup.Item>
+    </NavLink>
   );
 };
 
