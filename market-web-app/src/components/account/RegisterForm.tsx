@@ -12,7 +12,7 @@ interface IRegisterFormProps {
 const RegisterForm: FC<IRegisterFormProps> = ({ handleLoginMode }: IRegisterFormProps) => {
   const dispatch = useAppDispatch();
   function handleSubmitForm() {
-    dispatch(openPopup());
+    // dispatch(openPopup());
   }
 
   return (
