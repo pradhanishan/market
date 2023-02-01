@@ -2,13 +2,3 @@
   background-color: var(--color-dark);
   color: var(--color-light);
 }
-
-.button {
-  background-color: var(--color-dark);
-}
-
-.button:hover,
-.button:focus {
-  background-color: var(--color-dark);
-  opacity: 0.5;
-}

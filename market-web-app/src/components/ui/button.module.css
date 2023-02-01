@@ -1,0 +1,27 @@
+.button-secondary,
+.button {
+  color: var(--color-light);
+  text-align: center;
+  padding: 0.65rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.button,
+.button:hover,
+.button:focus {
+  background-color: var(--color-dark);
+}
+
+.button-secondary,
+.button-secondary:hover,
+.button-secondary:focus {
+  background-color: var(--color-dark-secondary);
+}
+
+.button:hover,
+.button:focus,
+.button-secondary:hover,
+.button-secondary:focus {
+  opacity: 0.5;
+}
