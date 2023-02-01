@@ -1,27 +1,9 @@
-import { FC, useState } from "react";
-import LoginForm from "../components/account/LoginForm";
-import RegisterForm from "../components/account/RegisterForm";
+import { FC } from "react";
+
+import ToggleAuthForm from "../components/account/ToggleAuthForm";
 
 const AccountPage: FC = () => {
-  const [registerMode, setRegisterMode] = useState<boolean>(false);
-
-  function handleRegisterMode() {
-    setRegisterMode(true);
-  }
-
-  function handleLoginMode() {
-    setRegisterMode(false);
-  }
-
-  return (
-    <div>
-      {registerMode === true ? (
-        <RegisterForm handleLoginMode={handleLoginMode} />
-      ) : (
-        <LoginForm handleRegisterMode={handleRegisterMode} />
-      )}
-    </div>
-  );
+  return <ToggleAuthForm />;
 };
 
 export default AccountPage;
