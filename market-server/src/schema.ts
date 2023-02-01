@@ -4,6 +4,11 @@ export const typeDefs = `#graphql
     test: String!
   }
 
+  type Mutation{
+    register(registerInput:RegisterInput!):AuthPayload!
+    login(loginInput:LoginInput!):AuthPayload!
+  }
+
   input RegisterInput{
     username:String!
     email:String!
