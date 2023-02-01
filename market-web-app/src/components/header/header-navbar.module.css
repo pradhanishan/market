@@ -1,0 +1,22 @@
+.navbar {
+  display: none;
+}
+
+.navbar-text {
+  color: var(--color-light);
+}
+
+.nav {
+  padding: 1rem;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 995px) {
+  .navbar {
+    display: inline;
+  }
+}

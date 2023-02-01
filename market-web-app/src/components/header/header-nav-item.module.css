@@ -1,0 +1,23 @@
+.header-nav-item {
+  text-decoration: none;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.header-nav-item-inactive {
+  opacity: 0.5;
+}
+
+.header-nav-item-active {
+  opacity: 1;
+}
+
+.header-nav-item-icon {
+  margin-right: 1rem;
+  font-size: 24px;
+}
+
+.header-nav-item:hover,
+.header-nav-item:focus {
+  opacity: 1;
+}

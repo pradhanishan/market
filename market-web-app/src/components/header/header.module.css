@@ -1,3 +1,16 @@
 .header {
   padding: 1rem;
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
+
+h5 {
+  flex: 1;
+  text-align: center;
+}
+
+/* @media only screen and (min-width: 995px) {
+  .header {
+    padding: 0;
+  }
+} */

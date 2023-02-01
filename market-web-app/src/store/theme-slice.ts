@@ -7,7 +7,12 @@ interface IThemeSliceState {
 
 // Define the initial state using that type
 const initialState: IThemeSliceState = {
-  darkMode: true,
+  darkMode:
+    localStorage.getItem("theme") !== undefined &&
+    localStorage.getItem("theme") !== null &&
+    localStorage.getItem("theme") === "true"
+      ? true
+      : false,
 };
 
 export const themeSlice = createSlice({
@@ -15,12 +20,15 @@ export const themeSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    toggleMode: (state) => {
-      state.darkMode = !state.darkMode;
+    toggleDarkMode: (state) => {
+      state.darkMode = true;
+    },
+    toggleLightMode: (state) => {
+      state.darkMode = false;
     },
   },
 });
 
-export const { toggleMode } = themeSlice.actions;
+export const { toggleDarkMode, toggleLightMode } = themeSlice.actions;
 
 export default themeSlice.reducer;
