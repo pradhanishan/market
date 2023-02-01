@@ -64,7 +64,7 @@ export const login = async (
   // check if username exists
 
   const loginUser = await prisma.user.findFirst({ where: { username: username } });
-  console.log(loginUser);
+
   if (!loginUser) {
     throw new GraphQLError(`invalid credentials`, {
       extensions: {
