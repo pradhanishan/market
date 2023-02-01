@@ -7,12 +7,7 @@ interface IThemeSliceState {
 
 // Define the initial state using that type
 const initialState: IThemeSliceState = {
-  darkMode:
-    localStorage.getItem("theme") !== undefined &&
-    localStorage.getItem("theme") !== null &&
-    localStorage.getItem("theme") === "true"
-      ? true
-      : false,
+  darkMode: false,
 };
 
 export const themeSlice = createSlice({

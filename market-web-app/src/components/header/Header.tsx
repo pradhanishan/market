@@ -6,6 +6,7 @@ const Header: FC = () => {
   return (
     <header className={classes.header}>
       <HeaderOffcanvas />
+      <h5>Market</h5>
     </header>
   );
 };

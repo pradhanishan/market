@@ -25,7 +25,9 @@ export const HeaderOffcanvas: FC = () => {
             <HeaderNavItem onClick={handleClose} icon={<MdShoppingCart />} name="Cart" to="/cart" />
             <HeaderNavItem onClick={handleClose} icon={<FaUser />} name="Account" to="/account" />
             <HeaderNavItem onClick={handleClose} icon={<MdSettings />} name="Settings" to="/settings" />
-            <Button>Login</Button>
+            <Button className={classes.button} onClick={handleClose}>
+              Login
+            </Button>
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>
