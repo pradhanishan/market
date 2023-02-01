@@ -13,7 +13,7 @@ const Popup: FC = () => {
   }
 
   return (
-    <Modal show={popup.show} onHide={closeModal} backdrop="static" keyboard={false}>
+    <Modal show={popup.show} onHide={closeModal} backdrop="static" keyboard={false} centered>
       <Modal.Header closeButton>
         <Modal.Title>Modal title</Modal.Title>
       </Modal.Header>
@@ -22,7 +22,6 @@ const Popup: FC = () => {
         <Button variant="secondary" onClick={closeModal}>
           Close
         </Button>
-        <Button variant="primary">Understood</Button>
       </Modal.Footer>
     </Modal>
   );
