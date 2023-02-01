@@ -1,7 +1,12 @@
 import { FC } from "react";
+import Popup from "../components/ui/Popup";
 
 const SettingsPage: FC = () => {
-  return <div>SettingsPage</div>;
+  return (
+    <div>
+      <Popup />
+    </div>
+  );
 };
 
 export default SettingsPage;

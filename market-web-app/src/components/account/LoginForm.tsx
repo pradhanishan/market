@@ -1,5 +1,7 @@
 import { FC } from "react";
 import Form from "react-bootstrap/Form";
+import { useAppDispatch } from "../../hooks/rtk-hooks";
+import { openPopup } from "../../store/popup-slice";
 import Button from "../ui/Button";
 import classes from "./login-form.module.css";
 
@@ -8,6 +10,11 @@ interface ILoginFormProps {
 }
 
 const LoginForm: FC<ILoginFormProps> = ({ handleRegisterMode }: ILoginFormProps) => {
+  const dispatch = useAppDispatch();
+  function handleSubmitForm() {
+    dispatch(openPopup());
+  }
+
   return (
     <div className={classes["login-form"]}>
       <Form>
@@ -22,7 +29,7 @@ const LoginForm: FC<ILoginFormProps> = ({ handleRegisterMode }: ILoginFormProps)
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
 
-        <Button>Login</Button>
+        <Button onClick={handleSubmitForm}>Login</Button>
         <Button variant="secondary" onClick={handleRegisterMode}>
           Register
         </Button>
