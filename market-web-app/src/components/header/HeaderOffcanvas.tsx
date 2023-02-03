@@ -6,11 +6,34 @@ import { FC, useState } from "react";
 import ListGroup from "react-bootstrap/listgroup";
 import HeaderNavItem from "./HeaderNavItem";
 import Button from "../ui/Button";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../hooks/rtk-hooks";
+import { rtkLogout } from "../../store/auth-slice";
+import { openPopup } from "../../store/popup-slice";
 
 export const HeaderOffcanvas: FC = () => {
+  const auth = useAppSelector((state) => state.auth);
+  const dispatch = useAppDispatch();
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+  };
+
+  const handleLogin = () => {
+    handleClose();
+    navigate("/account");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    dispatch(rtkLogout());
+    dispatch(openPopup({ title: "Success", message: "Logged out successfully" }));
+    handleClose();
+    navigate("/account");
+  };
+
   const handleShow = () => setShow(true);
   return (
     <div className={classes["header-offcanvas"]}>
@@ -23,9 +46,15 @@ export const HeaderOffcanvas: FC = () => {
           <ListGroup variant="flush">
             <HeaderNavItem onClick={handleClose} icon={<MdHome />} name="Home" to="/" />
             <HeaderNavItem onClick={handleClose} icon={<MdShoppingCart />} name="Cart" to="/cart" />
-            <HeaderNavItem onClick={handleClose} icon={<FaUser />} name="Account" to="/account" />
+            {auth.isLoggedIn === true ? (
+              <HeaderNavItem onClick={handleClose} icon={<FaUser />} name="Account" to="/account" />
+            ) : null}
             <HeaderNavItem onClick={handleClose} icon={<MdSettings />} name="Settings" to="/settings" />
-            <Button onClick={handleClose}>login</Button>
+            {auth.isLoggedIn === true ? (
+              <Button onClick={handleLogout}>Logout</Button>
+            ) : (
+              <Button onClick={handleLogin}>login</Button>
+            )}
           </ListGroup>
         </Offcanvas.Body>
       </Offcanvas>

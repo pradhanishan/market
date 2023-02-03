@@ -6,6 +6,7 @@ import AccountPage from "./pages/AccountPage";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import SettingsPage from "./pages/SettingsPage";
+// import { useAppSelector } from "./hooks/rtk-hooks";
 
 function App() {
   return (

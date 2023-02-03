@@ -15,9 +15,9 @@ const Popup: FC = () => {
   return (
     <Modal show={popup.show} onHide={closeModal} backdrop="static" keyboard={false} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Modal title</Modal.Title>
+        <Modal.Title>{popup.title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>I will not close if you click outside me. Don't even try to press escape key.</Modal.Body>
+      <Modal.Body>{popup.message}</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={closeModal}>
           Close
