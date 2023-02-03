@@ -12,14 +12,10 @@ const ToggleAuthForm: FC = () => {
   function handleLoginMode() {
     setRegisterMode(false);
   }
-  return (
-    <div>
-      {registerMode === true ? (
-        <RegisterForm handleLoginMode={handleLoginMode} />
-      ) : (
-        <LoginForm handleRegisterMode={handleRegisterMode} />
-      )}
-    </div>
+  return registerMode === true ? (
+    <RegisterForm handleLoginMode={handleLoginMode} />
+  ) : (
+    <LoginForm handleRegisterMode={handleRegisterMode} />
   );
 };
 

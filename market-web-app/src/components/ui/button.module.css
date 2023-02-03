@@ -1,4 +1,5 @@
 .button-secondary,
+.button-danger,
 .button {
   color: var(--color-light);
   text-align: center;
@@ -13,15 +14,22 @@
   background-color: var(--color-dark);
 }
 
+.button-danger,
+.button-danger:hover,
+.button-danger:focus {
+  background-color: var(--color-red);
+}
+
 .button-secondary,
 .button-secondary:hover,
 .button-secondary:focus {
   background-color: var(--color-dark-secondary);
 }
-
 .button:hover,
 .button:focus,
 .button-secondary:hover,
-.button-secondary:focus {
-  opacity: 0.5;
+.button-secondary:focus,
+.button-danger:hover,
+.button-danger:focus {
+  opacity: 0.75;
 }

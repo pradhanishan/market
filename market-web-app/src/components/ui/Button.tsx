@@ -13,6 +13,8 @@ const Button: FC<IButtonProps> = ({ onClick, variant, children }) => {
       className={
         variant !== undefined && variant !== null && variant === "secondary"
           ? classes["button-secondary"]
+          : variant !== undefined && variant !== null && variant === "danger"
+          ? classes["button-danger"]
           : classes.button
       }
       onClick={onClick}

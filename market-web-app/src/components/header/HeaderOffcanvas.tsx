@@ -51,7 +51,9 @@ export const HeaderOffcanvas: FC = () => {
             ) : null}
             <HeaderNavItem onClick={handleClose} icon={<MdSettings />} name="Settings" to="/settings" />
             {auth.isLoggedIn === true ? (
-              <Button onClick={handleLogout}>Logout</Button>
+              <Button variant="danger" onClick={handleLogout}>
+                Logout
+              </Button>
             ) : (
               <Button onClick={handleLogin}>login</Button>
             )}
